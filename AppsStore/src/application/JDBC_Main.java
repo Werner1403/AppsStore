@@ -1,4 +1,4 @@
-package application;
+package AppsStore.src.application;
 
 import java.sql.SQLException;
 

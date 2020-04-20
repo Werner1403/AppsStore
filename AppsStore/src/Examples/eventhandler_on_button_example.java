@@ -1,4 +1,4 @@
-package Examples;
+package AppsStore.src.Examples;
 
 
 
