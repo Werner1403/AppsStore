@@ -28,3 +28,35 @@
 	-fx-font-weight: bold;
 }
 
+.list-view .list-cell:even{
+	-fx-background-color: #585858;
+	-fx-text-fill: #f8f8f8;
+}
+
+.list-view .list-cell:odd{
+	-fx-background-color: #585858;
+	-fx-text-fill: #f8f8f8;
+}
+
+#scene_confirm{
+	-fx-border-color: #f8f8f8;
+	-fx-border-radius: 5;
+	-fx-border-width:3px;
+	-fx-background-color:#432d2d;
+}
+
+#button_Coonfirm:hover{
+	-fx-background-color: #541c1c;
+	-fx-border-color: #f8f8f8;
+	-fx-text-fill: #f8f8f8;
+}
+#label-confirm{
+	
+}
+
+#gridpane_Mainstartiev:hover{
+	-fx-border-color: #f8f8f8;
+	-fx-border-radius: 5;
+	-fx-border-width:3px;
+}
+

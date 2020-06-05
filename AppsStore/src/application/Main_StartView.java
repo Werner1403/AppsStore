@@ -4,17 +4,22 @@ package AppsStore.src.application;
 
 
 import java.io.FileNotFoundException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
+import AppsStore.src.Examples.eventhandler_on_button_example;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -22,6 +27,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Main_StartView extends Application{
 
@@ -33,9 +39,13 @@ public class Main_StartView extends Application{
 		launch(args);
 		
 	}
-	
+	 private double xOffset = 0;
+	 private double yOffset = 0;
+
+
 	@Override
 	public void start(Stage primaryStage) throws Exception, FileNotFoundException {
+		
 		
 		window = primaryStage;
 		
@@ -53,6 +63,12 @@ public class Main_StartView extends Application{
 		Button button_Start = new Button("Start");
 		
 		
+		button_Start.setOnAction(e ->{
+				
+		});
+		 
+		
+		
 		
 		Button button_close = new Button("Close");
 		button_close.setMinWidth(65);
@@ -68,6 +84,7 @@ public class Main_StartView extends Application{
 			});
 		
 		GridPane gridPane = new GridPane();
+		gridPane.setId("gridpane_Mainstartiev");
 		gridPane.setPadding(new Insets(10,10,10,10));
 		gridPane.setVgap(10);
 		gridPane.setHgap(10);
@@ -86,7 +103,21 @@ public class Main_StartView extends Application{
 		scene.getStylesheets().add(Main_StartView.class.getResource("TheStyle.css").toExternalForm());
 		window.setScene(scene);
 		window.setResizable(false);
-		
+		window.initStyle(StageStyle.UNDECORATED);
+		gridPane.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+        });
+        gridPane.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                primaryStage.setX(event.getScreenX() - xOffset);
+                primaryStage.setY(event.getScreenY() - yOffset);
+            }
+        });
 		
 		window.show();		
 	}

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
 <?import javafx.geometry.*?>
@@ -15,9 +16,9 @@
       <ListView prefHeight="200.0" prefWidth="200.0" style="-fx-control-inner-background: #383838;" BorderPane.alignment="CENTER" />
    </center>
    <top>
-      <VBox prefHeight="58.0" prefWidth="600.0" style="-fx-background-color: #383838;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="58.0" prefWidth="544.0" style="-fx-background-color: #383838;" BorderPane.alignment="CENTER">
          <children>
-            <TextField promptText="Suche" style="-fx-background-color: #585858; -fx-border-color: #f8f8f8; -fx-border-radius: 3; -fx-text-fill: #f8f8f8;" stylesheets="@TheStyle.css">
+            <TextField prefHeight="32.0" prefWidth="516.0" promptText="Suche" style="-fx-background-color: #585858; -fx-border-color: #f8f8f8; -fx-border-radius: 3; -fx-text-fill: #f8f8f8;" stylesheets="@TheStyle.css">
                <opaqueInsets>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </opaqueInsets>
@@ -33,11 +34,118 @@
             </TextField>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <RadioButton mnemonicParsing="false" text="APP" textFill="WHITE" />
-                  <RadioButton mnemonicParsing="false" text="Genre" textFill="WHITE" />
+                  <RadioButton mnemonicParsing="false" selected="true" text="APP" textFill="WHITE">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="suche_nach" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Genre" textFill="WHITE" toggleGroup="$suche_nach" />
                </children>
             </HBox>
          </children>
       </VBox>
    </top>
+   <right>
+      <VBox prefHeight="342.0" prefWidth="172.0" style="-fx-background-color: #383838; -fx-border-color: white; -fx-border-width: .5px; -fx-border-radius: 2;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #a72693;">
+               <children>
+                  <Label alignment="CENTER" layoutX="43.0" layoutY="9.0" prefHeight="30.0" prefWidth="127.0" style="-fx-font-size: 17px;" text="Art &amp; Design" textFill="WHITE">
+                     <font>
+                        <Font name="Candara" size="7.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/baseline_palette_white_36dp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #f54291;">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="7.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/baseline_commute_white_36dp.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="43.0" layoutY="9.0" prefHeight="30.0" prefWidth="127.0" style="-fx-font-size: 20px;" text="Vehicles" textFill="WHITE">
+                     <font>
+                        <Font name="Candara" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #241663;">
+               <children>
+                  <Label alignment="CENTER" layoutX="43.0" layoutY="9.0" prefHeight="30.0" prefWidth="127.0" style="-fx-font-size: 20px;" text="Beauty" textFill="WHITE">
+                     <font>
+                        <Font name="Candara" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/baseline_person_white_36dp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #ffcb74;">
+               <children>
+                  <Label alignment="CENTER" layoutX="43.0" layoutY="9.0" prefHeight="30.0" prefWidth="127.0" style="-fx-font-size: 20px;" text="Books" textFill="WHITE">
+                     <font>
+                        <Font name="Candara" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/baseline_book_white_36dp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #99b898;">
+               <children>
+                  <Label alignment="CENTER" layoutX="43.0" layoutY="9.0" prefHeight="30.0" prefWidth="127.0" style="-fx-font-size: 20px;" text="Business" textFill="WHITE">
+                     <font>
+                        <Font name="Candara" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/baseline_business_white_36dp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #aacfcf;">
+               <children>
+                  <Label alignment="CENTER" layoutX="43.0" layoutY="9.0" prefHeight="30.0" prefWidth="127.0" style="-fx-font-size: 20px;" text="Comics" textFill="WHITE">
+                     <font>
+                        <Font name="Candara" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/baseline_import_contacts_white_36dp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #aacfcf;">
+               <children>
+                  <Label alignment="CENTER" layoutX="43.0" layoutY="9.0" prefHeight="30.0" prefWidth="127.0" style="-fx-font-size: 20px;" text="Communication" textFill="WHITE">
+                     <font>
+                        <Font name="Candara" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Icons/baseline_import_contacts_white_36dp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </right>
 </BorderPane>
