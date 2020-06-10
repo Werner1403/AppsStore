@@ -36,7 +36,7 @@ public class DBManager
 		stmt.close();
 	}
 	
-	public String ausgabeCategorys() throws SQLException
+	public void ausgabeCategorys() throws SQLException
 	{
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery("SELECT DISTINCT Category from dataset;");
@@ -48,7 +48,6 @@ public class DBManager
 			}
 		stmt.close();
 		rs.close();
-		
 	}
 	
 	public void ausgabe() throws SQLException

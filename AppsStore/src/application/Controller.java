@@ -1,17 +1,21 @@
 package application;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 
 public class Controller {
-
+	
+	ChoiceBox<String> choicebox;
+	
 	public void close()
 	{
 		System.exit(0);
@@ -66,11 +70,26 @@ public class Controller {
 		window.show();
 	}
 	
-	public String showCategorys() throws ClassNotFoundException, SQLException
+	public void categoryWindow(ActionEvent e)
 	{
-		DBManager db = new DBManager();
-		db.ausgabeCategorys();
-		db.close();
-		
+		@SuppressWarnings("unchecked")
+		ChoiceBox<String> cb = new ChoiceBox(FXCollections.observableArrayList(
+			    "First", "Second", "Third")
+			);
 	}
+	
 }
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

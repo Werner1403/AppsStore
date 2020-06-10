@@ -1,13 +1,17 @@
 package application;
 
 import java.sql.SQLException;
-
+/**
+ * 
+ * @author werne
+ * @deprecated
+ */
 public class JDBC_Main
 {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException 
 	{
 		DBManager DB = new DBManager();
-		DB.NameSearch();
+		DB.ausgabeCategorys();
 		DB.close();
 	}
 }
