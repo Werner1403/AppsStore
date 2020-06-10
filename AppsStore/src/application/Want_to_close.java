@@ -3,7 +3,6 @@ package application;
 
 
 import javafx.application.Application;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -37,7 +36,6 @@ public class Want_to_close extends Application{
 		StackPane layout = new StackPane();
 		layout.getChildren().add(button);
 		
-		Parent root;
 		Scene scene = new Scene(layout,300,500);
 		primaryStage.setScene(scene);
 		primaryStage.show();

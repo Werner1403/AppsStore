@@ -1,8 +1,5 @@
 package application;
 
-
-
-
 import java.io.FileNotFoundException;
 
 import javafx.application.Application;
