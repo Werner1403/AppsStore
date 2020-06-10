@@ -1,14 +1,12 @@
-package AppsStore.src.application;
+package application;
 	
 import java.io.IOException;
 
-import javax.lang.model.element.VariableElement;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 
 public class The_Programm_Appstore extends Application {
