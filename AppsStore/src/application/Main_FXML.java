@@ -20,6 +20,7 @@ public class Main_FXML extends Application{
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("AppsStore.fxml"));
 		Scene scene = new Scene(root, 500, 400);
+		scene.getStylesheets().add(getClass().getResource("TheStyle.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

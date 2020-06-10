@@ -36,6 +36,21 @@ public class DBManager
 		stmt.close();
 	}
 	
+	public String ausgabeCategorys() throws SQLException
+	{
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT DISTINCT Category from dataset;");
+		while (rs.next())
+			{
+			final String Category = rs.getString(2);
+			final String CATEGORY = Category.replace("_"," ");
+			System.out.printf("|%-50s|%-20s|%6s|%7s|%-18s|\n",CATEGORY);
+			}
+		stmt.close();
+		rs.close();
+		
+	}
+	
 	public void ausgabe() throws SQLException
 	{
 		Statement stmt = con.createStatement();
