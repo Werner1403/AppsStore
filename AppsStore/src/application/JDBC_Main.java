@@ -7,7 +7,7 @@ public class JDBC_Main
 	public static void main(String[] args) throws ClassNotFoundException, SQLException 
 	{
 		DBManager DB = new DBManager();
-		DB.ausgabe();
+		DB.NameSearch();
 		DB.close();
 	}
 }
