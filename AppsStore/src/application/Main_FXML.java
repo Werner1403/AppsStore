@@ -18,7 +18,7 @@ public class Main_FXML extends Application {
 
 	public void start(Stage primaryStage) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("AppsStore.fxml"));
-		Scene scene = new Scene(root, 500, 400);
+		Scene scene = new Scene(root, 150, 120);
 		scene.getStylesheets().add(getClass().getResource("TheStyle.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.show();
