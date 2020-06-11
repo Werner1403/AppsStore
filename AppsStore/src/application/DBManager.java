@@ -143,7 +143,7 @@ public class DBManager {
 		stmt.close();
 		rs.close();
 		s.close();
-	}
+	} 
 
 	public void RatingSearch() throws SQLException {
 		Scanner s = new Scanner(System.in);

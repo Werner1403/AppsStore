@@ -60,7 +60,7 @@ public class Controller {
 		Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		window.setScene(scene);
 		window.show();
-	}
+	} 
 
 	public void startButton(ActionEvent e) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("StartButton.fxml"));

@@ -14,7 +14,7 @@ import javafx.stage.StageStyle;
 /**
  * @deprecated
  * @author werne
- *
+ *  
  */
 public class ConfirmBox {
 	

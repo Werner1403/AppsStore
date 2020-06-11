@@ -14,7 +14,7 @@ public class Main_FXML extends Application {
 	public static void main(String[] args) {
 
 		launch(args);
-	}
+	} 
 
 	public void start(Stage primaryStage) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("AppsStore.fxml"));
