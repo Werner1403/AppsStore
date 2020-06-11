@@ -14,7 +14,11 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
+/**
+ * @deprecated
+ * @author werne
+ *
+ */
 public class Main_StartView extends Application{
 
 	Stage window;
@@ -28,7 +32,9 @@ public class Main_StartView extends Application{
 	 private double xOffset = 0;
 	 private double yOffset = 0;
 
-
+/**
+ * @deprecated
+ */
 	@Override
 	public void start(Stage primaryStage) throws Exception, FileNotFoundException {
 		

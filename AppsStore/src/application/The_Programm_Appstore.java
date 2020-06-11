@@ -7,7 +7,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+/**
+ * @deprecated
+ * @author werne
+ *
+ */
 
 public class The_Programm_Appstore extends Application {
 	Stage window;

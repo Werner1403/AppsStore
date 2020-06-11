@@ -9,15 +9,14 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 
-public class Main_FXML extends Application{
+public class Main_FXML extends Application {
 
 	public static void main(String[] args) {
-		
+
 		launch(args);
 	}
-	
-	public void start(Stage primaryStage) throws IOException
-	{
+
+	public void start(Stage primaryStage) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("AppsStore.fxml"));
 		Scene scene = new Scene(root, 500, 400);
 		scene.getStylesheets().add(getClass().getResource("TheStyle.css").toExternalForm());
