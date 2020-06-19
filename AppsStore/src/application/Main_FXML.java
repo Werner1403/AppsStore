@@ -1,6 +1,7 @@
 package application;
 
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
@@ -18,9 +19,10 @@ public class Main_FXML extends Application {
 
 	public void start(Stage primaryStage) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("AppsStore.fxml"));
-		Scene scene = new Scene(root, 150, 120);
+		Scene scene = new Scene(root, 170, 140);
 		scene.getStylesheets().add(getClass().getResource("TheStyle.css").toExternalForm());
 		primaryStage.setScene(scene);
+		primaryStage.initStyle(StageStyle.TRANSPARENT);
 		primaryStage.show();
 	}
 
