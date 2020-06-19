@@ -2,6 +2,8 @@ package application;
 
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -21,9 +23,23 @@ public class Controller {
 
 	@FXML
 	TextArea show;
+	
+	private double xOffset = 0;
+	private double yOffset = 0;
 
 	public void close() {
 		System.exit(0);
+	}
+	
+	public void dragWindow(MouseEvent e) {
+		Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            window.setX(e.getScreenX() - xOffset);
+            window.setY(e.getScreenY() - yOffset);
+        
+	}
+	
+	public void minimize(ActionEvent e)throws IOException {
+		((Stage)((ToggleButton)e.getSource()).getScene().getWindow()).setIconified(true);
 	}
 
 	public void noCloseIntern(ActionEvent e) throws IOException {
