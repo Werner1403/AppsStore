@@ -1,19 +1,19 @@
 package application;
 
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.input.MouseEvent;
-
 import java.io.IOException;
 import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class Controller {
@@ -23,6 +23,7 @@ public class Controller {
 
 	@FXML
 	TextArea show;
+	
 	
 	private double xOffset = 0;
 	private double yOffset = 0;
@@ -80,9 +81,26 @@ public class Controller {
 
 	public void startButton(ActionEvent e) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("StartButton.fxml"));
+		
+		
 		Scene scene = new Scene(root, 700, 500);
 		scene.getStylesheets().add(getClass().getResource("TheStyle.css").toExternalForm());
 		Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
+
+		root.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+        });
+		root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+            	window.setX(event.getScreenX() - xOffset);
+            	window.setY(event.getScreenY() - yOffset);
+            }
+        });
 		window.setScene(scene);
 		window.show();
 	}
