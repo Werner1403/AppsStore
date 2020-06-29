@@ -1,45 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="520.0" prefWidth="700.0" style="-fx-background-color: #383838;" stylesheets="@TheStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<AnchorPane prefHeight="520.0" prefWidth="700.0" style="-fx-background-color: #383838;" stylesheets="@TheStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerIntern">
    <children>
       <Pane layoutY="26.0" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: üü;">
          <children>
-            <Pane fx:id="border" prefHeight="500.0" prefWidth="134.0" style="-fx-background-color: #383837;" />
-            <TextField fx:id="search" layoutX="440.0" layoutY="23.0" onAction="#searchBar" promptText="Suche:">
+            <Pane fx:id="border" prefHeight="500.0" prefWidth="134.0" style="-fx-background-color: #383837;">
+               <children>
+                  <Button layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onAction="#showCategorys" text="Categorys" />
+               </children></Pane>
+            <TextField fx:id="search" layoutX="440.0" layoutY="23.0" onAction="#searchBar" prefHeight="25.0" prefWidth="231.0" promptText="Suche:">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
             </TextField>
-            <Button layoutX="594.0" layoutY="23.0" mnemonicParsing="false" onAction="#searchBar" text="Los">
-               <effect>
-                  <Lighting diffuseConstant="1.47" specularConstant="0.35" specularExponent="33.49" surfaceScale="1.51">
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </effect></Button>
-            <ScrollPane layoutX="175.0" layoutY="64.0" prefHeight="410.0" prefWidth="495.0">
-               <content>
-                  <TextArea fx:id="show" prefHeight="1000.0" prefWidth="476.0" />
-               </content>
-            </ScrollPane>
             <Pane layoutX="1.0" layoutY="-26.0" onDragEntered="#dragWindow" prefHeight="25.0" prefWidth="700.0" style="-fx-background-color: #383838;">
                <cursor>
                   <Cursor fx:constant="NONE" />
@@ -55,6 +40,9 @@
                   </Lighting>
                </effect>
             </Pane>
+            <ListView fx:id="show" layoutX="185.0" layoutY="66.0" prefHeight="408.0" prefWidth="486.0" />
+            <Button fx:id="details" layoutX="362.0" layoutY="19.0" mnemonicParsing="false" onAction="#showDetails" text="Details" />
+            <Button fx:id="showApps" layoutX="335.0" layoutY="19.0" mnemonicParsing="false" onAction="#showCatApps" text="show Apps" visible="false" />
          </children>
       </Pane>
       <ToggleButton layoutX="646.0" layoutY="-16.0" mnemonicParsing="false" onAction="#openConfirmboxIntern" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: TRANSPARENT;" text="x" textFill="RED">
@@ -75,7 +63,7 @@
             </Lighting>
          </effect>
       </ToggleButton>
-      <ToggleButton layoutX="583.0" layoutY="-50.0" mnemonicParsing="false" onAction="#minimize" prefHeight="66.0" prefWidth="81.0" style="-fx-background-color: TRANSPARENT;" text="_" textFill="#4400ff">
+      <ToggleButton layoutX="580.0" layoutY="-49.0" mnemonicParsing="false" onAction="#minimize" prefHeight="86.0" prefWidth="74.0" style="-fx-background-color: TRANSPARENT;" text="_" textFill="#4400ff">
          <font>
             <Font name="System Bold" size="46.0" />
          </font>

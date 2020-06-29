@@ -1,55 +1,23 @@
 package application;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class Controller {
 
-	@FXML
-	TextField search;
-
-	@FXML
-	TextArea show;
-	
-	
 	private double xOffset = 0;
 	private double yOffset = 0;
-
+	
 	public void close() {
 		System.exit(0);
-	}
-	
-	public void dragWindow(MouseEvent e) {
-		Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            window.setX(e.getScreenX() - xOffset);
-            window.setY(e.getScreenY() - yOffset);
-        
-	}
-	
-	public void minimize(ActionEvent e)throws IOException {
-		((Stage)((ToggleButton)e.getSource()).getScene().getWindow()).setIconified(true);
-	}
-
-	public void noCloseIntern(ActionEvent e) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("StartButton.fxml"));
-		Scene scene = new Scene(root, 700, 500);
-		scene.getStylesheets().add(getClass().getResource("TheStyle.css").toExternalForm());
-		Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
-		window.setScene(scene);
-		window.show();
 	}
 
 	public void noClose(ActionEvent e) throws IOException {
@@ -70,18 +38,8 @@ public class Controller {
 		window.show();
 	}
 
-	public void openConfirmboxIntern(ActionEvent e) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("ConfirmBoxIntern.fxml"));
-		Scene scene = new Scene(root, 300, 300);
-		scene.getStylesheets().add(getClass().getResource("TheStyle.css").toExternalForm());
-		Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
-		window.setScene(scene);
-		window.show();
-	} 
-
 	public void startButton(ActionEvent e) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("StartButton.fxml"));
-		
 		
 		Scene scene = new Scene(root, 700, 500);
 		scene.getStylesheets().add(getClass().getResource("TheStyle.css").toExternalForm());
@@ -104,11 +62,4 @@ public class Controller {
 		window.setScene(scene);
 		window.show();
 	}
-
-	public void searchBar() throws ClassNotFoundException, SQLException {
-		String s = search.getText();
-		DBManager db = new DBManager();
-		show.setText(db.NameSearch(s));
-	}
-
 }

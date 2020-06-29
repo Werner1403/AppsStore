@@ -25,9 +25,9 @@
 	-fx-font-weight: bold;
 }
 
-.list-view .list-cell:even{
+.list-view{
 	-fx-background-color: #585858;
-	-fx-text-fill: #f8f8f8;
+
 }
 
 .list-view .list-cell:odd{
@@ -59,6 +59,6 @@
 	-fx-background-color: white;
 }
 
-#dernigga{
-	-fx-font-size:11px;
+#firstwindow{
+	-fx-font-size:2em;
 }

@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import javafx.collections.FXCollections;
@@ -74,31 +73,25 @@ public class DBManager {
 		rs.close();
 	}
 
-	public String NameSearch(String s) throws SQLException {
-		ArrayList<String> items = new ArrayList<String>();
+	public ObservableList<String> NameSearch(String s) throws SQLException {
+		ObservableList<String> items = FXCollections.observableArrayList();
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery("SELECT * FROM dataset WHERE App like '%" + s + "%';");
 		while (rs.next()) {
 			final String App = rs.getString(1);
-			final String Category = rs.getString(2);
-			final String Size = rs.getString(5);
-			final String Price = rs.getString(8);
-			final String Genres = rs.getString(10);
 			final String APP = App.replace("_", " ");
-			final String CATEGORY = Category.replace("_", " ");
-			final String SIZE = Size.replace("Varies with device", "/");
-			final String GENRES = Genres.replace("Video Players & Edit", "Videp Player");
-			items.add(App);
+
+			items.add(APP);
 		}
-		StringBuilder sb = new StringBuilder();
-		for (String a : items) {
-			sb.append(a);
-			sb.append("\n");
-		}
-		String a = sb.toString();
+		//StringBuilder sb = new StringBuilder();
+		//for (String a : items) {
+		//	sb.append(a);
+		//	sb.append("\n");
+		//}
+		//String a = sb.toString();
 		stmt.close();
 		rs.close();
-		return a;
+		return items;
 	}
 
 	public void GenreSearch() throws SQLException {
@@ -165,5 +158,73 @@ public class DBManager {
 		stmt.close();
 		rs.close();
 		s.close();
+	}
+	
+	public String categ(String s) throws SQLException {
+		String x = "";
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT Category FROM dataset WHERE App ='" + s + "';");
+		while (rs.next()) {
+			final String Category = rs.getString(1);
+			final String CATEGORY = Category.replace("_", " ");
+			x = CATEGORY;
+		}
+		stmt.close();
+		rs.close();
+		return x;
+	}
+	
+	public String size(String s) throws SQLException {
+		String x = "";
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT Size FROM dataset WHERE App ='" + s + "';");
+		while (rs.next()) {
+			final String Size = rs.getString(1);
+			x = Size;
+		}
+		stmt.close();
+		rs.close();
+		return x;
+	}
+	
+	public String rating(String s) throws SQLException {
+		String x = "";
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT Rating FROM dataset WHERE App ='" + s + "';");
+		while (rs.next()) {
+			final String Rating = rs.getString(1);
+			x = Rating;
+		}
+		stmt.close();
+		rs.close();
+		return x;
+	}
+	
+	public ObservableList<String> Categorys() throws SQLException {
+		ObservableList<String> items = FXCollections.observableArrayList();
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT DISTINCT Category FROM dataset");
+		while (rs.next()) {
+			final String cat = rs.getString(1);
+			final String CAT = cat.replace("_", " ");
+			items.add(CAT);
+		}
+		stmt.close();
+		rs.close();
+		return items;
+	}
+	
+	public ObservableList<String> CatApps(String s) throws SQLException {
+		ObservableList<String> items = FXCollections.observableArrayList();
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT App FROM dataset WHERE Category ='" + s + "';");
+		while (rs.next()) {
+			final String App = rs.getString(1);
+			final String APP= App.replace("_", " ");
+			items.add(APP);
+		}
+		stmt.close();
+		rs.close();
+		return items;
 	}
 }
