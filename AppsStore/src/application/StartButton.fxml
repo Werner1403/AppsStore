@@ -22,39 +22,51 @@
    <children>
       <Pane layoutY="26.0" prefHeight="500.0" prefWidth="700.0">
          <children>
-            <Pane fx:id="border" layoutX="1.0" prefHeight="500.0" prefWidth="134.0" style="-fx-background-color: #383837;">
+            <Pane fx:id="border" layoutX="1.0" layoutY="400.0" prefHeight="100.0" prefWidth="134.0" style="-fx-background-color: #383837;">
                <children>
-                  <Button layoutX="30.0" layoutY="418.0" mnemonicParsing="false" onAction="#showCategorys" text="Categorys" />
-                  <Button fx:id="details" layoutX="39.0" layoutY="383.0" mnemonicParsing="false" onAction="#showDetails" text="Details" />
+                  <Button layoutX="31.0" layoutY="37.0" mnemonicParsing="false" onAction="#showCategorys" text="Categorys" />
+                  <Button fx:id="details" layoutX="40.0" layoutY="8.0" mnemonicParsing="false" onAction="#showDetails" text="Details" />
                </children>
             </Pane>
-            <TextField fx:id="search" layoutX="440.0" layoutY="23.0" onAction="#searchBar" prefHeight="25.0" prefWidth="231.0" promptText="Suche:" style="-fx-background-color: #383838; -fx-border-color: white; -fx-border-radius: 10px;">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </TextField>
-            <Pane layoutX="1.0" layoutY="-26.0" onDragEntered="#dragWindow" prefHeight="25.0" prefWidth="700.0" style="-fx-background-color: #383838;">
+            <Pane layoutX="1.0" layoutY="-26.0" onDragEntered="#dragWindow" prefHeight="27.0" prefWidth="700.0" style="-fx-background-color: #383838;">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <effect>
-                  <Lighting diffuseConstant="1.28" specularConstant="0.09" specularExponent="31.16" surfaceScale="4.41">
+                  <Lighting diffuseConstant="1.37" specularConstant="0.09" specularExponent="31.16" surfaceScale="4.41">
                      <bumpInput>
-                        <Shadow height="44.72" radius="17.4125" width="26.93" />
+                        <Shadow height="34.22" radius="36.965" width="115.64" />
                      </bumpInput>
                      <light>
                         <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
-               <children>
-                  <Pane layoutX="-118.0" layoutY="-390.0" opacity="0.45" prefHeight="1302.0" prefWidth="146.0" rotate="45.0" style="-fx-background-color: white;" />
-               </children>
+            </Pane>
+            <Pane layoutX="18.0" layoutY="-158.0" opacity="0.38" prefHeight="500.0" prefWidth="146.0" rotate="45.0" style="-fx-background-color: white;">
+               <effect>
+                  <Lighting diffuseConstant="1.31" specularConstant="0.92" specularExponent="24.65" surfaceScale="3.24">
+                     <bumpInput>
+                        <Shadow height="59.55" radius="25.5675" width="44.72" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
             </Pane>
             <ListView fx:id="show" layoutX="133.0" layoutY="66.0" prefHeight="408.0" prefWidth="538.0" style="-fx-border-color: white;" />
+            <TextField fx:id="search" layoutX="440.0" layoutY="23.0" onAction="#searchBar" prefHeight="25.0" prefWidth="231.0" promptText="Suche:" style="-fx-background-color: #383838; -fx-border-color: white; -fx-border-radius: 10px; -fx-text-fill: white;">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <effect>
+                  <Bloom threshold="0.6" />
+               </effect>
+            </TextField>
             <Button fx:id="showApps" layoutX="335.0" layoutY="19.0" mnemonicParsing="false" onAction="#showCatApps" text="show Apps" visible="false" />
             <Text fill="WHITE" layoutX="30.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AppStoreFX">
                <font>
