@@ -16,7 +16,7 @@ public class DBManager {
 	public DBManager() throws ClassNotFoundException, SQLException {
 		con = DriverManager.getConnection(
 				"jdbc:mysql://localhost/apps?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
-				"root", "Ironman.100");
+				"root", "root");
 	}
 
 	public void close() throws SQLException {
@@ -180,7 +180,8 @@ public class DBManager {
 		ResultSet rs = stmt.executeQuery("SELECT Size FROM dataset WHERE App ='" + s + "';");
 		while (rs.next()) {
 			final String Size = rs.getString(1);
-			x = Size;
+			final String SIZE = Size.replace("Varies with device", "NaN");
+			x = SIZE;
 		}
 		stmt.close();
 		rs.close();

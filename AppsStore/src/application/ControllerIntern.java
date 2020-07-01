@@ -77,7 +77,7 @@ public class ControllerIntern {
 	{
 			DBManager db = new DBManager();
 			Parent root = FXMLLoader.load(getClass().getResource("Details.fxml"));
-			Scene scene = new Scene(root, 700, 500);
+			Scene scene = new Scene(root, 400, 260);
 			Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
 			window.setScene(scene);
 			window.show();
